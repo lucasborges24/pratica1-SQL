@@ -26,3 +26,18 @@ ON educations."courseId" = courses."id"
 JOIN schools
 ON educations."schoolId" = schools."id"
 WHERE educations."status" = 'finished';
+
+-- Exercise 4
+SELECT users."id",
+users."name",
+roles."name" AS "role",
+companies."name" AS "company",
+experiences."startDate"
+FROM users
+JOIN experiences
+ON users."id" = 50
+JOIN roles
+ON roles."id" = experiences."roleId"
+JOIN companies
+ON experiences."companyId" = companies."id"
+WHERE  experiences."endDate" IS NULL;
